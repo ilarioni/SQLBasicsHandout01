@@ -133,9 +133,19 @@
     <p>SELECT DISTINCT Country FROM Customers;  -- result is 21</p>
     <p>SELECT Country FROM Customers;  -- result is 91</p>
 
+    <p>The following SQL statement lists the number of different (distinct) customer countries:</p>
+    <p>SELECT COUNT(DISTINCT Country) FROM Customers; ---  result is 1 and 21 items inside</p>
+
+    <p><strong>Note: The example above will not work in Firefox! Because COUNT(DISTINCT column_name) is not supported in Microsoft Access databases. Firefox is using Microsoft Access in our examples.</strong></p>
+
+    <p>Here is the workaround for MS Access:</p>
+    <ul>
+        <li>SELECT Count(*) AS DistinctCountries</li>
+        <li>FROM (SELECT DISTINCT Country FROM Customers);</li>
+    </ul>
+
+    
     
 
-
-    
 </body>
 </html>
