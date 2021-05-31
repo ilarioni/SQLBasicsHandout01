@@ -249,7 +249,22 @@
         <li>WHERE NOT Country='Germany';</li>
     </ul>
 
-    
+
+    <h2>Combining AND, OR and NOT</h2>
+    <p>You can also combine the AND, OR and NOT operators.</p>
+    <p>The following SQL statement selects all fields from "Customers" where country is "Germany" AND city must be "Berlin" OR "München" (use parenthesis to form complex expressions):</p>
+
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE Country='Germany' AND (City='Berlin' OR City='München');</li>
+    </ul>
+
+    <p>The following SQL statement selects all fields from "Customers" where country is NOT "Germany" and NOT "USA":</p>
+
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE NOT Country='Germany' AND NOT Country='USA';</li>
+    </ul>
 
 
 
