@@ -322,6 +322,36 @@
         <li>ORDER BY Country ASC, CustomerName DESC;</li>
     </ul>
 
+    <h1>SQL INSERT INTO Statement</h1>
+    <p>The INSERT INTO statement is used to insert new records in a table.</p>
+
+    <p>INSERT INTO Syntax</p>
+    <p>it is possible to write the INSERT INTO statement in two ways:</p>
+    <ul>
+        <li>Specify both the column names and the values to be inserted:</li>
+        <li> If you are adding values for all the columns of the table, you do not need to specify the column names in the SQL query.
+            However, make sure the order of the values is in the same order as the columns in the table. Here, the INSERT INTO syntax would be as follows:
+        </li>
+    </ul>
+
+    <p>The following SQL statement inserts a new record in the "Customers" table:</p>
+    <ul>
+        <li>INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)</li>
+        <li>VALUES ('Cardinal','Tom B. Erichsen','Skagen 21','Stavanger','4006','Norway');</li>
+    </ul>
+
+    <p>customers table has one more data injected in the table</p>
+    <p>Did you notice that we did not insert any number into the CustomerID field?</p>
+    <p>The CustomerID column is an auto-increment field and will be generated automatically when a new record is inserted into the table.</p>
+
+    <h3>Insert Data Only in Specified Columns</h3>
+    <p>It is also possible to only insert data in specific columns.</p>
+    <p>The following SQL statement will insert a new record, but only insert data in the "CustomerName", "City", and "Country" columns (CustomerID will be updated automatically):</p>
+
+    <ul>
+        <li>INSERT INTO Customers (CustomerName, City, Country)</li>
+        <li>VALUES ('Cardinal', 'Stavanger', 'Norway');</li>
+    </ul>
 
 
 
