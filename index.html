@@ -391,6 +391,19 @@
 
     <p><strong>Tip: Always use IS NULL to look for NULL values.</strong></p>
 
+    <h3>The IS NOT NULL Operator</h3>
+    <p>The IS NOT NULL operator is used to test for non-empty values (NOT NULL values).</p>
+    <p>the following SQL lists all customers with a value in the "Address" field:</p>
+
+    <ul>
+        <li>SELECT CustomerName, ContactName, Address</li>
+        <li>FROM Customers</li>
+        <li>WHERE Address IS NOT NULL;</li>
+    </ul>
+
+    <p><strong>it gives filled data back</strong></p>
+    
+
 
 
 </body>
