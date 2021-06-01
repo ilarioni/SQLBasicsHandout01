@@ -290,6 +290,37 @@
         <li>ORDER BY City;</li>
     </ul>
 
+    <h2>ORDER BY DESC Example</h2>
+
+    <p>The following SQL statement selects all customers from the "Customers" table, sorted DESCENDING by the "Country" column:</p>
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>ORDER BY Country DESC;</li>
+    </ul>
+
+    or 
+
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>ORDER BY CustomerID DESC;</li>
+    </ul>
+
+    <h3>ORDER BY Several Columns Example</h3>
+    <p>The following SQL statement selects all customers from the "Customers" table, sorted by the "Country" and the "CustomerName" column.</p>
+    <p>This means that it orders by Country, but if some rows have the same Country, it orders them by CustomerName:</p>
+
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>ORDER BY Country, CustomerName;</li>
+    </ul>
+
+    <h3>ORDER BY Several Columns Example 2</h3>
+    <p>The following SQL statement selects all customers from the "Customers" table, sorted ascending by the "Country" and descending by the "CustomerName" column:</p>
+
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>ORDER BY Country ASC, CustomerName DESC;</li>
+    </ul>
 
 
 
