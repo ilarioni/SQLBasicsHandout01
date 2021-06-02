@@ -406,6 +406,25 @@
 
     <h1>The SQL UPDATE Statement</h1>
 
+    <p>The UPDATE statement is used to modify the existing records in a table.</p>
+    <p>UPDATE Syntax</p>
+    <ul>
+        <li>UPDATE table_name</li>
+        <li>SET column1 = value1, column2 = value2, ...</li>
+        <li>WHERE condition;</li>
+    </ul>
+
+    <p>Note: Be careful when updating records in a table! Notice the WHERE clause in the UPDATE statement.</p>
+    <p>The WHERE clause specifies which record(s) that should be updated. If you omit the WHERE clause, all records in the table will be updated!</p>
+
+    <p>example</p>
+    <ul>
+        <li>UPDATE Customers</li>
+        <li>SET ContactName='Alfred Schmidt', City='Frankfurt'</li>
+        <li>WHERE CustomerID=1;</li>
+    </ul>
+
+    
 
 
 </body>
