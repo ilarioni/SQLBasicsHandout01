@@ -424,7 +424,18 @@
         <li>WHERE CustomerID=1;</li>
     </ul>
 
-    
+    <h3>UPDATE Multiple Records</h3>
+
+    <p>It is the WHERE clause that determines how many records will be updated.</p>
+    <p>The following SQL statement will update the ContactName to "Juan" for all records where country is "Mexico":</p>
+
+    <ul>
+        <li>UPDATE Customers</li>
+        <li>SET ContactName='Juan'</li>
+        <li>WHERE Country='Mexico';</li>
+    </ul>
+
+    <p>Be careful when updating records. If you omit the WHERE clause, ALL records will be updated!</p>
 
 
 </body>
