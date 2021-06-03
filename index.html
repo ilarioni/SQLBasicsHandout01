@@ -507,7 +507,37 @@
         <li>FETCH FIRST 3 ROWS ONLY;</li>
     </ul>
 
-    
+    <p>The following SQL statement selects the first 50% of the records from the "Customers" table (for SQL Server/MS Access):</p>
+    <p>SELECT TOP 50 PERCENT * FROM Customers;</p>
+
+
+    <p>The following SQL statement shows the equivalent example for Oracle:</p>
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>FETCH FIRST 50 PERCENT ROWS ONLY;</li>
+    </ul>
+
+    <h3>ADD a WHERE CLAUSE</h3>
+    <p>The following SQL statement selects the first three records from the "Customers" table, where the country is "Germany" (for SQL Server/MS Access):</p>
+
+    <ul>
+        <li>SELECT TOP 3 * FROM Customers</li>
+        <li>WHERE Country='Germany';</li>
+    </ul>
+
+    <p>The following SQL statement shows the equivalent example for MySQL:</p>
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE Country='Germany'</li>
+        <li>LIMIT 3;</li>
+    </ul>
+
+    <p>the following SQL statement shows the equivalent example for Oracle:</p>
+    <il>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE Country='Germany'</li>
+        <li>FETCH FIRST 3 ROWS ONLY;</li>
+    </il>
 
 
 </body>
