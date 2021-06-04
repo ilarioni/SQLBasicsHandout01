@@ -837,6 +837,37 @@
         <li>SELECT * FROM Products</li>
         <li>WHERE Price BETWEEN 10 AND 20;</li>
     </ul>
+
+    <h3>NOT BETWEEN Example</h3>
+    <p>To display the products outside the range of the previous example, use NOT BETWEEN:</p>
+    <ul>
+        <li>SELECT * FROM Products</li>
+        <li>WHERE Price NOT BETWEEN 10 AND 20;</li>
+    </ul>
+
+    <h3>BETWEEN with IN Example</h3>
+    <p>The following SQL statement selects all products with a price between 10 and 20. In addition; do not show products with a CategoryID of 1,2, or 3:</p>
+    <ul>
+        <li>SELECT * FROM Products</li>
+        <li>WHERE Price BETWEEN 10 AND 20</li>
+        <li>AND CategoryID NOT IN (1,2,3);</li>
+    </ul>
+
+    <h3>BETWEEN Text Values Example</h3>
+    <p>The following SQL statement selects all products with a ProductName between Carnarvon Tigers and Mozzarella di Giovanni:</p>
+    <ul>
+        <li>SELECT * FROM Products</li>
+        <li>WHERE ProductName BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'</li>
+        <li>ORDER BY ProductName;</li>
+    </ul>
+
+    <p>The following SQL statement selects all products with a ProductName between Carnarvon Tigers and Chef Anton's Cajun Seasoning:</p>
+    <ul>
+        <li>SELECT * FROM Products</li>
+        <li>WHERE ProductName BETWEEN "Carnarvon Tigers" AND "Chef Anton's Cajun Seasoning"</li>
+        <li>ORDER BY ProductName;</li>
+    </ul>
+
     
 
 
