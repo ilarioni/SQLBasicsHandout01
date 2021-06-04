@@ -593,7 +593,28 @@
         <li>WHERE condition;</li>
     </ul>
 
-    
+    <p>The following SQL statement finds the number of products:</p>
+    <ul>
+        <li>SELECT COUNT(ProductID)</li>
+        <li>FROM Products;</li>
+    </ul>
+
+    <p><strong>Note: NULL values are not counted.</strong></p>
+
+    <p>The following SQL statement finds the average price of all products:</p>
+
+    <ul>
+        <li>SELECT AVG(Price)</li>
+        <li>FROM Products;</li>
+    </ul>
+
+    <p><strong>Note: NULL values are ignored.</strong></p>
+
+    <p>The following SQL statement finds the sum of the "Quantity" fields in the "OrderDetails" table:</p>
+    <ul>
+        <li>SELECT SUM(Quantity)</li>
+        <li>FROM OrderDetails;</li>
+    </ul>
 
 </body>
 </html>
