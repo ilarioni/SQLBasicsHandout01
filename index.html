@@ -706,6 +706,28 @@
         <li>#	Represents any single numeric character	2#5 finds 205, 215, 225, 235, 245, 255, 265, 275, 285, and 295</li>
     </ul>
 
+    <h3>Wildcard Characters in SQL Server</h3>
+
+    <ul>
+        <li>%	Represents zero or more characters	bl% finds bl, black, blue, and blob</li>
+        <li>_	Represents a single character	h_t finds hot, hat, and hit</li>
+        <li>[]	Represents any single character within the brackets	h[oa]t finds hot and hat, but not hit</li>
+        <li>^	Represents any character not in the brackets	h[^oa]t finds hit, but not hot and hat</li>
+        <li>-	Represents a range of characters	c[a-b]t finds cat and cbt</li>
+    </ul>
+
+    <p>All the wildcards can also be used in combinations!</p>
+    <p>Here are some examples showing different LIKE operators with '%' and '_' wildcards:</p>
+
+    <ul>
+        <li>WHERE CustomerName LIKE 'a%'	Finds any values that starts with "a"</li>
+        <li>WHERE CustomerName LIKE '%a'	Finds any values that ends with "a"</li>
+        <li>WHERE CustomerName LIKE '%or%'	Finds any values that have "or" in any position</li>
+        <li>WHERE CustomerName LIKE '_r%'	Finds any values that have "r" in the second position</li>
+        <li>WHERE CustomerName LIKE 'a__%'	Finds any values that starts with "a" and are at least 3 characters in length</li>
+        <li>WHERE ContactName LIKE 'a%o'	Finds any values that starts with "a" and ends with "o"</li>
+    </ul>
+
     
 
 
