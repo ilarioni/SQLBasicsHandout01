@@ -728,7 +728,63 @@
         <li>WHERE ContactName LIKE 'a%o'	Finds any values that starts with "a" and ends with "o"</li>
     </ul>
 
+    <h3>Using the % Wildcard</h3>
+    <p>The following SQL statement selects all customers with a City starting with "ber":</p>
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE City LIKE 'ber%';</li>
+    </ul>
+
+    <p>The following SQL statement selects all customers with a City containing the pattern "es": </p>
+
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE City LIKE '%es%';</li>
+    </ul>
+
+    <h3>Using the _ Wildcard</h3>
+    <p>The following SQL statement selects all customers with a City starting with any character, followed by "ondon":</p>
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE City LIKE '_ondon';</li>
+    </ul>
+
+    <p>The following SQL statement selects all customers with a City starting with "L", followed by any character, followed by "n", followed by any character, followed by "on":</p>
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE City LIKE 'L_n_on';</li>
+    </ul>
+
+    <h3>Using the [charlist] Wildcard</h3>
+    <p>The following SQL statement selects all customers with a City starting with "b", "s", or "p":</p>
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE City LIKE '[bsp]%';</li>
+    </ul>
+
+    <p>The following SQL statement selects all customers with a City starting with "a", "b", or "c":</p>
+    <ul>
+        <li>SELECT * FROM Customer</li>
+        <li>WHERE City LIKE '[a-c]%';</li>
+    </ul>
+
+    <h3>Using the [!charlist] Wildcard</h3>
+    <p>the two following SQL statements select all customers with a City NOT starting with "b", "s", or "p":</p>
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE City LIKE '[!bsp]%';</li>
+    </ul>
+
+    <p>or</p>
+
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE City NOT LIKE '[bsp]%';</li>
+    </ul>
+
     
+
+
 
 
 </body>
