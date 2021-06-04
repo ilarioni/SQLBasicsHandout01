@@ -647,6 +647,50 @@
         <li>WHERE ContactName LIKE 'a%o'	Finds any values that start with "a" and ends with "o"</li>
     </ul>
 
+    <p>The following SQL statement selects all customers with a CustomerName starting with "a":</p>
+
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE CustomerName LIKE 'a%';</li>
+    </ul>
+
+
+    <p>The following SQL statement selects all customers with a CustomerName ending with "a":</p>
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE CustomerName LIKE '%a';</li>
+    </ul>
+
+
+    <p>The following SQL statement selects all customers with a CustomerName that have "or" in any position:</p>
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE CustomerName LIKE '%or%';</li>
+    </ul>
+
+    <p>The following SQL statement selects all customers with a CustomerName that have "r" in the second position:</p>
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE CustomerName LIKE '_r%';</li>
+    </ul>
+
+    <p>The following SQL statement selects all customers with a CustomerName that starts with "a" and are at least 3 characters in length:</p>
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE CustomerName LIKE 'a__%';</li>
+    </ul>
+
+    <p>he following SQL statement selects all customers with a ContactName that starts with "a" and ends with "o":</p>
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE ContactName LIKE 'a%o';</li>
+    </ul>
+
+    <p>The following SQL statement selects all customers with a CustomerName that does NOT start with "a":</p>
+    <ul>
+        <li>SELECT * FROM Customers</li>
+        <li>WHERE CustomerName NOT LIKE 'a%';</li>
+    </ul>
 
 
 </body>
