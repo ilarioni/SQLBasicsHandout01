@@ -907,6 +907,33 @@
         <li>FROM table_name AS alias_name;</li>
     </ul>
 
+    <h3>Alias for Columns Examples</h3>
+    <p>The following SQL statement creates two aliases, one for the CustomerID column and one for the CustomerName column:</p>
+    <ul>
+        <li>SELECT CustomerID AS ID, CustomerName AS Customer</li>
+        <li>FROM Customers;</li>
+    </ul>
+
+    <p><strong>The following SQL statement creates two aliases, one for the CustomerName column and one for the ContactName column. Note: It requires double quotation marks or square brackets if the alias name contains spaces:</strong></p>
+
+    <ul>
+        <li>SELECT CustomerName AS Customer, ContactName AS [Contact Person]</li>
+        <li>FROM Customers;</li>
+    </ul>
+
+    <p>The following SQL statement creates an alias named "Address" that combine four columns (Address, PostalCode, City and Country):</p>
+
+    <ul>
+        <li>SELECT CustomerName, Address + ', ' + PostalCode + ' ' + City + ', ' + Country AS Address</li>
+        <li>FROM Customers;</li>
+    </ul>
+
+    <p>Note: To get the SQL statement above to work in MySQL use the following:</p>
+    <ul>
+        <li>SELECT CustomerName, CONCAT(Address,', ',PostalCode,', ',City,', ',Country) AS Address</li>
+        <li>FROM Customers;</li>
+    </ul>
+
     
 
     
