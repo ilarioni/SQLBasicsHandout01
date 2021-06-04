@@ -616,5 +616,38 @@
         <li>FROM OrderDetails;</li>
     </ul>
 
+    <h1>SQL LIKE Operator</h1>
+    <p>The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.</p>
+    <p>There are two wildcards often used in conjunction with the LIKE operator:</p>
+    <ul>
+        <li>The percent sign (%) represents zero, one, or multiple characters</li>
+        <li>The underscore sign (_) represents one, single character</li>
+    </ul>
+
+    <p><strong>Note: MS Access uses an asterisk (*) instead of the percent sign (%), and a question mark (?) instead of the underscore (_).</strong></p>
+
+    <p>The percent sign and the underscore can also be used in combinations! Like syntax is following:</p>
+    <ul>
+        <li>SELECT column1, column2, ...</li>
+        <li>FROM table_name</li>
+        <li>WHERE columnN LIKE pattern;</li>
+    </ul>
+
+    <p><strong>Tip: You can also combine any number of conditions using AND or OR operators.</strong></p>
+
+    <p>Here are some examples showing different LIKE operators with '%' and '_' wildcards:</p>
+
+    <ul>
+        <li>WHERE CustomerName LIKE 'a%'	Finds any values that start with "a"</li>
+        <li>WHERE CustomerName LIKE '%a'	Finds any values that end with "a"</li>
+        <li>WHERE CustomerName LIKE '%or%'	Finds any values that have "or" in any position</li>
+        <li>WHERE CustomerName LIKE '_r%'	Finds any values that have "r" in the second position</li>
+        <li>WHERE CustomerName LIKE 'a_%'	Finds any values that start with "a" and are at least 2 characters in length</li>
+        <li>WHERE CustomerName LIKE 'a__%'	Finds any values that start with "a" and are at least 3 characters in length</li>
+        <li>WHERE ContactName LIKE 'a%o'	Finds any values that start with "a" and ends with "o"</li>
+    </ul>
+
+
+
 </body>
 </html>
