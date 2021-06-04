@@ -934,6 +934,32 @@
         <li>FROM Customers;</li>
     </ul>
 
+    <h3>Alias for Tables Example</h3>
+    <p>The following SQL statement selects all the orders from the customer with CustomerID=4 (Around the Horn). </p>
+    <p>We use the "Customers" and "Orders" tables, and give them the table aliases of "c" and "o" respectively (Here we use aliases to make the SQL shorter):</p>
+
+    <ul>
+        <li>SELECT o.OrderID, o.OrderDate, c.CustomerName</li>
+        <li>FROM Customers AS c, Orders AS o</li>
+        <li>WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;</li>
+    </ul>
+
+    <p>The following SQL statement is the same as above, but without aliases:</p>
+
+    <ul>
+        <li>SELECT Orders.OrderID, Orders.OrderDate, Customers.CustomerName</li>
+        <li>FROM Customers, Orders</li>
+        <li>WHERE Customers.CustomerName='Around the Horn' AND Customers.CustomerID=Orders.CustomerID;</li>
+    </ul>
+
+    <p>Aliases can be useful when:</p>
+    <ol>
+        <li>There are more than one table involved in a query</li>
+        <li>Functions are used in the query</li>
+        <li>Column names are big or not very readable</li>
+        <li>Two or more columns are combined together</li>
+    </ol>
+
     
 
     
