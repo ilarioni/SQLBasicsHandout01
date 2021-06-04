@@ -868,9 +868,28 @@
         <li>ORDER BY ProductName;</li>
     </ul>
 
+    <h3>NOT BETWEEN Text Values Example</h3>
+    <p>The following SQL statement selects all products with a ProductName not between Carnarvon Tigers and Mozzarella di Giovanni:</p>
+    <ul>
+        <li>SELECT * FROM Products</li>
+        <li>WHERE ProductName NOT BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'</li>
+        <li>ORDER BY ProductName;</li>
+    </ul>
+
+    <h3>BETWEEN Dates Example</h3>
+    <p>The following SQL statement selects all orders with an OrderDate between '01-July-1996' and '31-July-1996':</p>
+    <ul>
+        <li>SELECT * FROM Orders</li>
+        <li>WHERE OrderDate BETWEEN #07/01/1996# AND #07/31/1996#;</li>
+    </ul>
+
+    <p>or</p>
+    <ul>
+        <li>SELECT * FROM Orders</li>
+        <li>WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';</li>
+    </ul>
+
     
-
-
 
 
 
