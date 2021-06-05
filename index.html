@@ -979,6 +979,35 @@
         <li>FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table</li>
     </ul>
 
+    <h1>SQL INNER JOIN Keyword</h1>
+    <p>The INNER JOIN keyword selects records that have matching values in both tables.</p>
+    <ul>
+        <li>SELECT column_name(s)</li>
+        <li>FROM table1</li>
+        <li>INNER JOIN table2</li>
+        <li>ON table1.column_name = table2.column_name;</li>
+    </ul>
+
+    <p>The following SQL statement selects all orders with customer information:</p>
+    <ul>
+        <li>SELECT Orders.OrderID, Customers.CustomerName</li>
+        <li>FROM Orders</li>
+        <li>INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;</li>
+    </ul>
+
+    <p><strong>Note: The INNER JOIN keyword selects all rows from both tables as long as there is a match between the columns. If there are records in the "Orders" table that do not have matches in "Customers", these orders will not be shown!</strong></p>
+
+    <h3>JOIN Three Tables</h3>
+    <p>The following SQL statement selects all orders with customer and shipper information:</p>
+    <ul>
+        <li>SELECT Orders.OrderID, Customers.CustomerName, Shippers.ShipperName</li>
+        <li>FROM ((Orders</li>
+        <li>INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID)</li>
+        <li>INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID);</li>
+    </ul>
+
+    
+
     
 </body>
 </html>
