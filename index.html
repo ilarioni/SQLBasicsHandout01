@@ -1077,6 +1077,26 @@
 
     <h1>SQL Self Join</h1>
 
+    <p>A self join is a regular join, but the table is joined with itself.</p>
+    <ul>
+        <li>SELECT column_name(s)</li>
+        <li>FROM table1 T1, table1 T2</li>
+        <li>WHERE condition;</li>
+    </ul>
+
+    <p>T1 and T2 are different table aliases for the same table.</p>
+
+    <p>The following SQL statement matches customers that are from the same city:</p>
+    <ul>
+        <li>SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City</li>
+        <li>FROM Customers A, Customers B</li>
+        <li>WHERE A.CustomerID <> B.CustomerID</li>
+        <li>AND A.City = B.City</li>
+        <li>ORDER BY A.City;</li>
+    </ul>
+
+    <p><strong> this <>  sign is - not equal to - sign</strong></p>
+
 
     
 </body>
