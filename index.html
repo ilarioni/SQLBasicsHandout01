@@ -1125,6 +1125,57 @@
 
     <p>The following SQL statement returns the cities (only distinct values) from both the "Customers" and the "Suppliers" table:</p>
 
+    <ul>
+        <li>SELECT City FROM Customers</li>
+        <li>UNION</li>
+        <li>SELECT City FROM Suppliers</li>
+        <li>ORDER BY City;</li>
+    </ul>
+
+    <p><strong>Note: If some customers or suppliers have the same city, each city will only be listed once, because UNION selects only distinct values. Use UNION ALL to also select duplicate values!</strong></p>
+
+    <p>The following SQL statement returns the cities (duplicate values also) from both the "Customers" and the "Suppliers" table:</p>
+    <ul>
+        <li>SELECT City FROM Customers</li>
+        <li>UNION ALL</li>
+        <li>SELECT City FROM Suppliers</li>
+        <li>ORDER BY City;</li>
+    </ul>
+
+    <p>The following SQL statement returns the German cities (only distinct values) from both the "Customers" and the "Suppliers" table:</p>
+
+    <ul>
+        <li>SELECT City, Country FROM Customers</li>
+        <li>WHERE Country='Germany'</li>
+        <li>UNION</li>
+        <li>SELECT City, Country FROM Suppliers</li>
+        <li>WHERE Country='Germany'</li>
+        <li>ORDER BY City;</li>
+    </ul>
+
+    <p>The following SQL statement returns the German cities (duplicate values also) from both the "Customers" and the "Suppliers" table:</p>
+    <ul>
+        <li>SELECT City, Country FROM Customers</li>
+        <li>WHERE Country='Germany'</li>
+        <li>UNION ALL</li>
+        <li>SELECT City, Country FROM Suppliers</li>
+        <li>WHERE Country='Germany'</li>
+        <li>ORDER BY City;</li>
+    </ul>
+
+    <p>The following SQL statement lists all customers and suppliers:</p>
+    <ul>
+        <li>SELECT 'Customer' AS Type, ContactName, City, Country</li>
+        <li>FROM Customers</li>
+        <li>UNION</li>
+        <li>SELECT 'Supplier', ContactName, City, Country</li>
+        <li>FROM Suppliers;</li>
+    </ul>
+
+    <p><strong>Notice the "AS Type" above - it is an alias. SQL Aliases are used to give a table or a column a temporary name. An alias only exists for the duration of the query. So, here we have created a temporary column named "Type", that list whether the contact person is a "Customer" or a "Supplier".</strong></p>
+
+    <h1>SQL GROUP BY Statement</h1>
+
     
 </body>
 </html>
