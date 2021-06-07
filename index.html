@@ -1175,6 +1175,38 @@
     <p><strong>Notice the "AS Type" above - it is an alias. SQL Aliases are used to give a table or a column a temporary name. An alias only exists for the duration of the query. So, here we have created a temporary column named "Type", that list whether the contact person is a "Customer" or a "Supplier".</strong></p>
 
     <h1>SQL GROUP BY Statement</h1>
+    <p>The GROUP BY statement groups rows that have the same values into summary rows, like "find the number of customers in each country".</p>
+    <p>The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), MIN(), SUM(), AVG()) to group the result-set by one or more columns.</p>
+    <ul>
+        <li>SELECT column_name(s)</li>
+        <li>FROM table_name</li>
+        <li>WHERE condition</li>
+        <li>GROUP BY column_name(s)</li>
+        <li>ORDER BY column_name(s);</li>
+    </ul>
+
+    <p>The following SQL statement lists the number of customers in each country:</p>
+    <ul>
+        <li>SELECT COUNT(CustomerID), Country</li>
+        <li>FROM Customers</li>
+        <li>GROUP BY Country;</li>
+    </ul>
+
+    <p>The following SQL statement lists the number of customers in each country, sorted high to low:</p>
+    <ul>
+        <li>SELECT COUNT(CustomerID), Country</li>
+        <li>FROM Customers</li>
+        <li>GROUP BY Country</li>
+        <li>ORDER BY COUNT(CustomerID) DESC;</li>
+    </ul>
+
+    <p>The following SQL statement lists the number of customers in each country, sorted low to high:</p>
+    <ul>
+        <li>SELECT COUNT(CustomerID), Country</li>
+        <li>FROM Customers</li>
+        <li>GROUP BY Country</li>
+        <li>ORDER BY COUNT(CustomerID) ASC;</li>
+    </ul>
 
     
 </body>
