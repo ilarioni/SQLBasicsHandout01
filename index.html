@@ -1208,6 +1208,66 @@
         <li>ORDER BY COUNT(CustomerID) ASC;</li>
     </ul>
 
+    <h3>GROUP BY With JOIN Example</h3>
+    <p>The following SQL statement lists the number of orders sent by each shipper:</p>
+    <ul>
+        <li>SELECT Shippers.ShipperName, COUNT(Orders.OrderID) AS NumberOfOrders FROM Orders</li>
+        <li>LEFT JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID</li>
+        <li>GROUP BY ShipperName;</li>
+    </ul>
+
+    <h1>SQL HAVING Clause</h1>
+    <p>The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.</p>
+    <ul>
+        <li>SELECT column_name(s)</li>
+        <li>FROM table_name</li>
+        <li>WHERE condition</li>
+        <li>GROUP BY column_name(s)</li>
+        <li>HAVING condition</li>
+        <li>ORDER BY column_name(s);</li>
+    </ul>
+
+    <h3>SQL HAVING Examples</h3>
+    <p>The following SQL statement lists the number of customers in each country. Only include countries with more than 5 customers:</p>
+    <ul>
+        <li>SELECT COUNT(CustomerID), Country</li>
+        <li>FROM Customers</li>
+        <li>GROUP BY Country</li>
+        <li>HAVING COUNT(CustomerID) > 5;</li>
+    </ul>
+
+    <p>The following SQL statement lists the number of customers in each country, sorted high to low (Only include countries with more than 5 customers):</p>
+    <ul>
+        <li>SELECT COUNT(CustomerID), Country</li>
+        <li>FROM Customers</li>
+        <li>GROUP BY Country</li>
+        <li>HAVING COUNT(CustomerID) > 5</li>
+        <li>ORDER BY COUNT(CustomerID) DESC;</li>
+    </ul>
+
+    <h3>More HAVING Examples</h3>
+    <p>The following SQL statement lists the employees that have registered more than 10 orders:</p>
+    <ul>
+        <li>SELECT Employees.LastName, COUNT(Orders.OrderID) AS NumberOfOrders</li>
+        <li>FROM (Orders</li>
+        <li>INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID)</li>
+        <li>GROUP BY LastName</li>
+        <li>HAVING COUNT(Orders.OrderID) > 10;</li>
+    </ul>
+
+
+    <p>The following SQL statement lists if the employees "Davolio" or "Fuller" have registered more than 25 orders:</p>
+    <ul>
+        <li>SELECT Employees.LastName, COUNT(Orders.OrderID) AS NumberOfOrders</li>
+        <li>FROM Orders</li>
+        <li>INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID</li>
+        <li>WHERE LastName = 'Davolio' OR LastName = 'Fuller'</li>
+        <li>GROUP BY LastName</li>
+        <li>HAVING COUNT(Orders.OrderID) > 25;</li>
+    </ul>
+
+    <h1>SQL EXISTS Operator</h1>
+
     
 </body>
 </html>
