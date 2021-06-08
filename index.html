@@ -1267,6 +1267,39 @@
     </ul>
 
     <h1>SQL EXISTS Operator</h1>
+    <p>The EXISTS operator is used to test for the existence of any record in a subquery.</p>
+    <p>The EXISTS operator returns TRUE if the subquery returns one or more records.</p>
+    <ul>
+        <li>SELECT column_name(s)</li>
+        <li>FROM table_name</li>
+        <li>WHERE EXISTS</li>
+        <li>(SELECT column_name FROM table_name WHERE condition);</li>
+    </ul>
+
+    <p>The following SQL statement returns TRUE and lists the suppliers with a product price less than 20:</p>
+    <ul>
+        <li>SELECT SupplierName</li>
+        <li>FROM Suppliers</li>
+        <li>WHERE EXISTS (SELECT ProductName FROM Products WHERE Products.SupplierID = Suppliers.supplierID AND Price < 20);</li>
+    </ul>
+
+    <p>The following SQL statement returns TRUE and lists the suppliers with a product price equal to 22:</p>
+    <ul>
+        <li>SELECT SupplierName</li>
+        <li>FROM Suppliers</li>
+        <li>WHERE EXISTS (SELECT ProductName FROM Products WHERE Products.SupplierID = Suppliers.supplierID AND Price = 22);</li>
+    </ul>
+
+    <p>The following SQL statement returns TRUE and lists the suppliers ContactName with a product price equal to 20:</p>
+    <ul>
+        <li>SELECT ContactName</li>
+        <li>FROM Suppliers</li>
+        <li>Where exists (select ProductName from Products Where Products.SupplierID = Suppliers.SupplierID and Price = 20);</li>
+    </ul>
+
+    
+
+
 
     
 </body>
