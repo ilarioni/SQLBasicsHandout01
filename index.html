@@ -1298,10 +1298,88 @@
     </ul>
 
     <h1>SQL ANY and ALL Operators</h1>
-    
+    <p>The ANY and ALL operators allow you to perform a comparison between a single column value and a range of other values.</p>
+    <p>The ANY operator:</p>
+    <ul>
+        <li>returns a boolean value as a result</li>
+        <li>returns TRUE if ANY of the subquery values meet the condition</li>
+    </ul>
 
+    <p>ANY means that the condition will be true if the operation is true for any of the values in the range.</p>
+    <ul>
+        <li>SELECT column_name(s)</li>
+        <li>FROM table_name</li>
+        <li>WHERE column_name operator ANY</li>
+        <li>(SELECT column_name</li>
+        <li>FROM table_name</li>
+        <li>WHERE condition);</li>
+    </ul>
 
+    <p>The ALL operator:</p>
+    <ul>
+        <li>returns a boolean value as a result</li>
+        <li>returns TRUE if ALL of the subquery values meet the condition</li>
+        <li>is used with SELECT, WHERE and HAVING statements</li>
+    </ul>
 
-    
+    <p>ALL means that the condition will be true only if the operation is true for all values in the range. </p>
+    <ul>
+        <li>SELECT ALL column_name(s)</li>
+        <li>FROM table_name</li>
+        <li>WHERE condition;</li>
+    </ul>
+
+    <ul>
+        <li>SELECT column_name(s)</li>
+        <li>FROM table_name</li>
+        <li>WHERE column_name operator ALL</li>
+        <li>(SELECT column_name</li>
+        <li>FROM table_name</li>
+        <li>WHERE condition);</li>
+    </ul>
+
+    <h3>SQL ANY Examples</h3>
+    <p>The following SQL statement lists the ProductName if it finds ANY records in the OrderDetails table has Quantity equal to 10 (this will return TRUE because the Quantity column has some values of 10):</p>
+
+    <ul>
+        <li>SELECT ProductName </li>
+        <li>FROM Products</li>
+        <li>WHERE ProductID = ANY (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);</li>
+    </ul>
+
+    <p>The following SQL statement lists the ProductName if it finds ANY records in the OrderDetails table has Quantity larger than 99 (this will return TRUE because the Quantity column has some values larger than 99):</p>
+    <ul>
+        <li>SELECT ProductName</li>
+        <li>FROM Products</li>
+        <li>WHERE ProductID = ANY (SELECT ProductID FROM OrderDetails WHERE Quantity > 99);</li>
+    </ul>
+
+    <p>The following SQL statement lists the ProductName if it finds ANY records in the OrderDetails table has Quantity larger than 1000 (this will return FALSE because the Quantity column has no values larger than 1000):</p>
+
+    <ul>
+        <li>SELECT ProductName</li>
+        <li>FROM Products</li>
+        <li>WHERE ProductID = ANY (SELECT ProductID FROM OrderDetails WHERE Quantity > 1000);</li>
+    </ul>
+
+    <h3>SQL ALL Examples</h3>
+    <p>The following SQL statement lists ALL the product names:</p>
+    <ul>
+        <li>SELECT ALL ProductName</li>
+        <li>FROM Products</li>
+        <li>WHERE TRUE;</li>
+    </ul>
+
+    <p>The following SQL statement lists the ProductName if ALL the records in the OrderDetails table has Quantity equal to 10.</p>
+    <p>This will of course return FALSE because the Quantity column has many different values (not only the value of 10):</p>
+
+    <ul>
+        <li>SELECT ProductName </li>
+        <li>FROM Products</li>
+        <li>WHERE ProductID = ALL (SELECT ProductID FROM OrderDetails WHERE Quantity = 10);</li>
+    </ul>
+
+    <h1>SQL SELECT INTO Statement</h1>
+
 </body>
 </html>
