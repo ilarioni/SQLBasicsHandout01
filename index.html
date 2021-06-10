@@ -1441,7 +1441,29 @@
         <li>WHERE 1 = 0;</li>
     </ul>
 
-    
+
+    <h1>SQL INSERT INTO SELECT Statement</h1>
+
+    <p>The INSERT INTO SELECT statement copies data from one table and inserts it into another table.</p>
+    <p>The INSERT INTO SELECT statement requires that the data types in source and target tables matches.</p>
+    <p>Note: The existing records in the target table are unaffected.</p>
+
+    <p>Copy all columns from one table to another table:</p>
+    <ul>
+        <li>INSERT INTO table2</li>
+        <li>SELECT * FROM table1</li>
+        <li>WHERE condition;</li>
+    </ul>
+
+    <p>Copy only some columns from one table into another table:</p>
+    <ul>
+        <li>INSERT INTO table2 (column1, column2, column3, ...)</li>
+        <li>SELECT column1, column2, column3, ...</li>
+        <li>FROM table1</li>
+        <li>WHERE condition;</li>
+    </ul>
+
+    <h3>SQL INSERT INTO SELECT Examples</h3>
 
     
 
