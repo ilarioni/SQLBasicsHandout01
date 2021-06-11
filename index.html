@@ -1520,7 +1520,32 @@
         <li>END);</li>
     </ul>
 
-    
+    <h1>SQL NULL Functions</h1>
+    <h3>SQL IFNULL(), ISNULL(), COALESCE(), and NVL() Functions</h3>
+    <p>Suppose that the "UnitsOnOrder" column is optional, and may contain NULL values.</p>
+    <p>Look at the following SELECT statement:</p>
+    <ul>
+        <li>SELECT ProductName, UnitPrice * (UnitsInStock + UnitsOnOrder)</li>
+        <li>FROM Products;</li>
+    </ul>
+
+    <p>In the example above, if any of the "UnitsOnOrder" values are NULL, the result will be NULL.</p>
+
+    <h3>Solutions</h3>
+    <h4><strong>MySQL</strong></h4>
+    <p>The MySQL IFNULL() function lets you return an alternative value if an expression is NULL:</p>
+    <ul>
+        <li>SELECT ProductName, UnitPrice * (UnitsInStock + IFNULL(UnitsOnOrder, 0))</li>
+        <li>FROM Products;</li>
+    </ul>
+
+    <p>or we can use the COALESCE() function, like this:</p>
+    <ul>
+        <li>SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0))</li>
+        <li>FROM Products;</li>
+    </ul>
+   
+
 
     
 
