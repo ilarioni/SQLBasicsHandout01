@@ -1464,6 +1464,24 @@
     </ul>
 
     <h3>SQL INSERT INTO SELECT Examples</h3>
+    <p>The following SQL statement copies "Suppliers" into "Customers" (the columns that are not filled with data, will contain NULL):</p>
+    <ul>
+        <li>INSERT INTO Customers (CustomerName, City, Country)</li>
+        <li>SELECT SupplierName, City, Country FROM Suppliers;</li>
+    </ul>
+
+    <p>The following SQL statement copies "Suppliers" into "Customers" (fill all columns):</p>
+    <ul>
+        <li>INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)</li>
+        <li>SELECT SupplierName, ContactName, Address, City, PostalCode, Country FROM Suppliers;</li>
+    </ul>
+
+    <p>The following SQL statement copies only the German suppliers into "Customers":</p>
+    <ul>
+        <li>INSERT INTO Customers (CustomerName, City, Country)</li>
+        <li>SELECT SupplierName, City, Country FROM Suppliers</li>
+        <li>WHERE Country='Germany';</li>
+    </ul>
 
     
 
