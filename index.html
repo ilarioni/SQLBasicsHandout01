@@ -1624,7 +1624,126 @@
     <ul>
         <li>EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';</li>
     </ul>
+
+    <h1>SQL Comments</h1>
+    <p>Comments are used to explain sections of SQL statements, or to prevent execution of SQL statements.</p>
+    <p>Comments are not supported in Microsoft Access databases. Firefox and Microsoft Edge are using Microsoft Access database in our examples.</p>
+
+    <h3>Single Line Comments</h3>
+
+    <p>Single line comments start with --.</p>
+    <p>Any text between -- and the end of the line will be ignored (will not be executed).</p>
+    <p>The following example uses a single-line comment as an explanation:</p>
+
+    <ul>
+        <li>--Select all:</li>
+        <li>SELECT * FROM Customers;</li>
+    </ul>
+
+    <p>The following example uses a single-line comment to ignore the end of a line:</p>
+    <ul>
+        <li>SELECT * FROM Customers -- WHERE City='Berlin';</li>
+    </ul>
+
+    <p>The following example uses a single-line comment to ignore a statement:</p>
+    <ul>
+        <li>--SELECT * FROM Customers;</li>
+        <li>SELECT * FROM Products;</li>
+    </ul>
+
+    <h3><strong>Multi-line Comments</strong></h3>
+    <p>Multi-line comments start with /* and end with */.</p>
+    <p>Any text between /* and */ will be ignored.</p>
+    <p>The following example uses a multi-line comment as an explanation:</p>
+
+    <ul>
+        <li>/*Select all the columns</li>
+        <li>of all the records</li>
+        <li>in the Customers table:*/</li>
+        <li>SELECT * FROM Customers;</li>
+    </ul>
+
+    <p>The following example uses a multi-line comment to ignore many statements:</p>
+    <ul>
+        <li>/*SELECT * FROM Customers;</li>
+        <li>SELECT * FROM Products;</li>
+        <li>SELECT * FROM Orders;</li>
+        <li>SELECT * FROM Categories;*/</li>
+        <li>SELECT * FROM Suppliers;</li>
+    </ul>
+
+    <p>To ignore just a part of a statement, also use the /* */ comment.</p>
+    <p>The following example uses a comment to ignore part of a line:</p>
+    <ul>
+        <li>SELECT CustomerName, /*City,*/ Country FROM Customers;</li>
+    </ul>
+
+    <p>The following example uses a comment to ignore part of a statement:</p>
+    <ul>
+        <li>SELECT * FROM Customers WHERE (CustomerName LIKE 'L%'</li>
+        <li>OR CustomerName LIKE 'R%' /*OR CustomerName LIKE 'S%'</li>
+        <li>OR CustomerName LIKE 'T%'*/ OR CustomerName LIKE 'W%')</li>
+        <li>AND Country='USA'</li>
+        <li>ORDER BY CustomerName;</li>
+    </ul>
+
+    <h1>SQL Operators</h1>
+    <h3>SQL Arithmetic Operators</h3>
+    <ul>
+        <li>+	Add</li>
+        <li>-	Subtract</li>
+        <li>*	Multiply</li>
+        <li>/	Divide</li>
+        <li>%	Modulo</li>
+    </ul>
     
+    <h3>SQL Bitwise Operators</h3>
+    <ul>
+        <li>&	Bitwise AND</li>
+        <li>|	Bitwise OR</li>
+        <li>^	Bitwise exclusive OR</li>
+    </ul>
+
+    <h3>SQL Comparison Operators</h3>
+    <ul>
+        <li>=	Equal to</li>
+        <li>>	Greater than</li>
+        <li><	Less than</li>
+        <li>>=	Greater than or equal to</li>
+        <li><=	Less than or equal to</li>
+        <li><>	Not equal to</li>
+    </ul>
+
+    <h3>SQL Compound Operators</h3>
+    <ul>
+        <li>+=	Add equals</li>
+        <li>-=	Subtract equals</li>
+        <li>*=	Multiply equals</li>
+        <li>/=	Divide equals</li>
+        <li>%=	Modulo equals</li>
+        <li>&=	Bitwise AND equals</li>
+        <li>^-=	Bitwise exclusive equals</li>
+        <li>|*=	Bitwise OR equals</li>
+    </ul>
+
+    <h3>SQL Logical Operators</h3>
+    <ul>
+        <li>ALL	TRUE if all of the subquery values meet the condition</li>
+        <li>AND	TRUE if all the conditions separated by AND is TRUE</li>
+        <li>ANY	TRUE if any of the subquery values meet the condition</li>
+        <li>BETWEEN	TRUE if the operand is within the range of comparisons</li>
+        <li>EXISTS	TRUE if the subquery returns one or more records</li>
+        <li>IN	TRUE if the operand is equal to one of a list of expressions</li>
+        <li>LIKE	TRUE if the operand matches a pattern</li>
+        <li>NOT	Displays a record if the condition(s) is NOT TRUE</li>
+        <li>OR	TRUE if any of the conditions separated by OR is TRUE</li>
+        <li>SOME	TRUE if any of the subquery values meet the condition</li>
+    </ul>
+
+
+    <h1>SQL Database</h1>
+
+
 
 </body>
 </html>
