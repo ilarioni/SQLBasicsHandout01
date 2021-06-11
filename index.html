@@ -1483,6 +1483,45 @@
         <li>WHERE Country='Germany';</li>
     </ul>
 
+    <h1>SQL CASE Statement</h1>
+    <p>The CASE statement goes through conditions and returns a value when the first condition is met (like an if-then-else statement).</p>
+    <p>So, once a condition is true, it will stop reading and return the result. If no conditions are true, it returns the value in the ELSE clause.</p>
+    <p>If there is no ELSE part and no conditions are true, it returns NULL.</p>
+
+    <h3>CASE syntax is following</h3>
+    <ul>
+        <li>CASE</li>
+        <li>WHEN condition1 THEN result1</li>
+        <li>WHEN condition2 THEN result2</li>
+        <li>WHEN conditionN THEN resultN</li>
+        <li>ELSE result</li>
+        <li>END;</li>
+    </ul>
+
+    <p>The following SQL goes through conditions and returns a value when the first condition is met:</p>
+    <ul>
+        <li>SELECT OrderID, Quantity,</li>
+        <li>CASE</li>
+        <li>WHEN Quantity > 30 THEN 'The quantity is greater than 30'</li>
+        <li>WHEN Quantity = 30 THEN 'The quantity is 30'</li>
+        <li>ELSE 'The quantity is under 30'</li>
+        <li>END AS QuantityText</li>
+        <li>FROM OrderDetails;</li>
+    </ul>
+
+    <p>The following SQL will order the customers by City. However, if City is NULL, then order by Country:</p>
+    <ul>
+        <li>SELECT CustomerName, City, Country</li>
+        <li>FROM Customers</li>
+        <li>ORDER BY</li>
+        <li>(CASE</li>
+        <li>WHEN City IS NULL THEN Country</li>
+        <li>ELSE City</li>
+        <li>END);</li>
+    </ul>
+
+    
+
     
 
 </body>
