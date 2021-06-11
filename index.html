@@ -1595,6 +1595,22 @@
     <p>Execute the stored procedure above as follows:</p>
     <p>EXEC SelectAllCustomers;</p>
 
+    <h3>Stored Procedure With One Parameter</h3>
+    <p>The following SQL statement creates a stored procedure that selects Customers from a particular City from the "Customers" table:</p>
+    <ul>
+        <li>CREATE PROCEDURE SelectAllCustomers @City nvarchar(30)</li>
+        <li>AS</li>
+        <li>SELECT * FROM Customers WHERE City = @City</li>
+        <li>GO;</li>
+    </ul>
+
+    <p>Execute the stored procedure above as follows:</p>
+    <ul>
+        <li>EXEC SelectAllCustomers @City = 'London';</li>
+    </ul>
+
+    <p>Stored Procedure With Multiple Parameters</p>
+
    
 
 
