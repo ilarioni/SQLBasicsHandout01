@@ -1544,6 +1544,57 @@
         <li>SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0))</li>
         <li>FROM Products;</li>
     </ul>
+
+    <h4><strong>SQL Server</strong></h4>
+    <p>The SQL Server ISNULL() function lets you return an alternative value when an expression is NULL:</p>
+    <ul>
+        <li>SELECT ProductName, UnitPrice * (UnitsInStock + ISNULL(UnitsOnOrder, 0))</li>
+        <li>FROM Products;</li>
+    </ul>
+
+    <h4><strong>MS Access</strong></h4>
+    <p>The MS Access IsNull() function returns TRUE (-1) if the expression is a null value, otherwise FALSE (0):</p>
+    <ul>
+        <li>SELECT ProductName, UnitPrice * (UnitsInStock + IIF(IsNull(UnitsOnOrder), 0, UnitsOnOrder))</li>
+        <li>FROM Products;</li>
+    </ul>
+
+    <h4><strong>Oracle</strong></h4>
+    <p>The Oracle NVL() function achieves the same result:</p>
+    <ul>
+        <li>SELECT ProductName, UnitPrice * (UnitsInStock + NVL(UnitsOnOrder, 0))</li>
+        <li>FROM Products;</li>
+    </ul>
+
+    <h1>SQL Stored Procedures for SQL Server</h1>
+    <p>What is a Stored Procedure?</p>
+
+    <p>A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again.</p>
+    <p>So if you have an SQL query that you write over and over again, save it as a stored procedure, and then just call it to execute it.</p>
+    <p>You can also pass parameters to a stored procedure, so that the stored procedure can act based on the parameter value(s) that is passed.</p>
+
+    <h5><strong>Stored Procedure Syntax</strong></h5>
+    <ul>
+        <li>CREATE PROCEDURE procedure_name</li>
+        <li>AS</li>
+        <li>sql_statement</li>
+        <li>GO;</li>
+    </ul>
+
+    <h5><strong>Execute a Stored Procedure</strong></h5>
+    <p>EXEC procedure_name;</p>
+
+    <p>The following SQL statement creates a stored procedure named "SelectAllCustomers" that selects all records from the "Customers" table:</p>
+    <ul>
+        <li>CREATE PROCEDURE SelectAllCustomers</li>
+        <li>AS</li>
+        <li>SELECT * FROM Customers</li>
+        <li>GO;</li>
+    </ul>
+
+    <p>Execute the stored procedure above as follows:</p>
+    <p>EXEC SelectAllCustomers;</p>
+
    
 
 
