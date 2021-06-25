@@ -1754,6 +1754,124 @@
 
     
     <h1>SQL DROP DATABASE statement</h1>
+    <p>
+        The DROP DATABASE statement is used to drop an existing SQL database.
+        syntax is following:
+        DROP DATABASE databasename;
+
+    </p>
+    <p><strong>Note: Be careful before dropping a database. Deleting a database will result in loss of complete information stored in the database!</strong></p>
+
+    <p>
+        The following SQL statement drops the existing database "testDB":
+        DROP DATABASE testDB;
+
+    </p>
+    <p><strong>Tip: Make sure you have admin privilege before dropping any database. Once a database is dropped, you can check it in the list of databases with the following SQL command: SHOW DATABASES;</strong></p>
+
+
+    <h1>SQL BACKUP DATABASE for SQL Server</h1>
+    <p>The BACKUP DATABASE statement is used in SQL Server to create a full back up of an existing SQL database.</p>
+    <p>
+        syntax is following:
+        BACKUP DATABASE databasename
+        TO DISK = 'filepath';
+    </p>
+
+    <h3>The SQL BACKUP WITH DIFFERENTIAL Statement</h3>
+
+    <p>
+        A differential back up only backs up the parts of the database that have changed since the last full database backup.
+
+        syntax is following:
+        BACKUP DATABASE databasename
+        TO DISK = 'filepath'
+        WITH DIFFERENTIAL;
+    </p>
+
+    <p>
+        The following SQL statement creates a full back up of the existing database "testDB" to the D disk:
+        example:
+        BACKUP DATABASE testDB
+        TO DISK = 'D:\backups\testDB.bak';
+    </p>
+
+    <p><strong>Tip: Always back up the database to a different drive than the actual database. Then, if you get a disk crash, you will not lose your backup file along with the database.</strong></p>
+
+    <p>
+        The following SQL statement creates a differential back up of the database "testDB":
+        example
+        BACKUP DATABASE testDB
+        TO DISK = 'D:\backups\testDB.bak'
+        WITH DIFFERENTIAL;
+    </p>
+
+    <p><strong>Tip: A differential back up reduces the back up time (since only the changes are backed up).</strong></p>
+
+    <h1>SQL CREATE TABLE Statement</h1>
+
+    <p>
+        The CREATE TABLE statement is used to create a new table in a database.
+
+        syntax is following:
+
+        CREATE TABLE table_name (
+            column1 datatype,
+            column2 datatype,
+            column3 datatype,
+        ....
+        );
+
+        The column parameters specify the names of the columns of the table.
+
+        The datatype parameter specifies the type of data the column can hold (e.g. varchar, integer, date, etc.).
+    </p>
+
+    <h3>SQL CREATE TABLE Example</h3>
+    <p>
+        The following example creates a table called "Persons" that contains five columns: PersonID, LastName, FirstName, Address, and City:
+
+        CREATE TABLE Persons (
+            PersonID int,
+            LastName varchar(255),
+            FirstName varchar(255),
+            Address varchar(255),
+            City varchar(255)
+        );
+
+        The PersonID column is of type int and will hold an integer.
+
+        The LastName, FirstName, Address, and City columns are of type varchar and will hold characters, and the maximum length for these fields is 255 characters.
+
+        Tip: The empty "Persons" table can now be filled with data with the SQL INSERT INTO statement.
+    </p>
+
+    <h3>Create Table Using Another Table</h3>
+
+    <p>
+        A copy of an existing table can also be created using CREATE TABLE.
+        The new table gets the same column definitions. All columns or specific columns can be selected.
+        If you create a new table using an existing table, the new table will be filled with the existing values from the old table.
+
+        syntax is following:
+        CREATE TABLE new_table_name AS
+            SELECT column1, column2,...
+            FROM existing_table_name
+            WHERE ....;
+
+    </p>
+
+    <p>
+        The following SQL creates a new table called "TestTables" (which is a copy of the "Customers" table): 
+
+        CREATE TABLE TestTable AS
+        SELECT customername, contactname
+        FROM customers;
+    </p>
+
+
+    <h1>SQL DROP TABLE </h1>
+
 
 
 
