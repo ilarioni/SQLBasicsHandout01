@@ -2002,6 +2002,126 @@
 
     <h1>SQL NOT NULL Constraint</h1>
 
+    <p>
+        SQL NOT NULL Constraint
+        By default, a column can hold NULL values.
+        The NOT NULL constraint enforces a column to NOT accept NULL values.
+
+        This enforces a field to always contain a value, which means that you cannot insert a new record, or update a record without adding a value to this field.
+
+    </p>
+
+    <h3>SQL NOT NULL on CREATE TABLE</h3>
+
+    <p>
+        The following SQL ensures that the "ID", "LastName", and "FirstName" columns will NOT accept NULL values when the "Persons" table is created:
+    </p>
+
+    <p>
+        CREATE TABLE Persons (
+            ID int NOT NULL,
+            LastName varchar(255) NOT NULL,
+            FirstName varchar(255) NOT NULL,
+            Age int
+        );
+    </p>
+
+    <h3>SQL NOT NULL on ALTER TABLE</h3>
+    <p>To create a NOT NULL constraint on the "Age" column when the "Persons" table is already created, use the following SQL:</p>
+
+    <p>
+        ALTER TABLE Persons
+        MODIFY Age int NOT NULL;
+    </p>
+
+
+    <h1>SQL UNIQUE Constraint</h1>
+
+    <p>
+        The UNIQUE constraint ensures that all values in a column are different.
+
+        Both the UNIQUE and PRIMARY KEY constraints provide a guarantee for uniqueness for a column or set of columns.
+        A PRIMARY KEY constraint automatically has a UNIQUE constraint.
+        However, you can have many UNIQUE constraints per table, but only one PRIMARY KEY constraint per table.
+    </p>
+
+    <p>
+        The following SQL creates a UNIQUE constraint on the "ID" column when the "Persons" table is created:
+        SQL Server / Oracle / MS Access:
+    </p>
+
+    <p>
+        CREATE TABLE Persons (
+            ID int NOT NULL UNIQUE,
+            LastName varchar(255) NOT NULL,
+            FirstName varchar(255),
+            Age int
+        );
+    </p>
+
+    <p>
+        MySQL:
+
+        CREATE TABLE Persons (
+            ID int NOT NULL,
+            LastName varchar(255) NOT NULL,
+            FirstName varchar(255),
+            Age int,
+            UNIQUE (ID)
+        );
+    </p>
+
+    <p>
+        To name a UNIQUE constraint, and to define a UNIQUE constraint on multiple columns, use the following SQL syntax:
+        MySQL / SQL Server / Oracle / MS Access:
+
+        CREATE TABLE Persons (
+            ID int NOT NULL,
+            LastName varchar(255) NOT NULL,
+            FirstName varchar(255),
+            Age int,
+            CONSTRAINT UC_Person UNIQUE (ID,LastName)
+        );
+    </p>
+
+    <h3>SQL UNIQUE Constraint on ALTER TABLE</h3>
+    <p>
+        To create a UNIQUE constraint on the "ID" column when the table is already created, use the following SQL:
+        MySQL / SQL Server / Oracle / MS Access:
+
+        ALTER TABLE Persons
+        ADD UNIQUE (ID);
+    </p>
+
+    <p>
+        To name a UNIQUE constraint, and to define a UNIQUE constraint on multiple columns, use the following SQL syntax:
+        MySQL / SQL Server / Oracle / MS Access:
+
+        ALTER TABLE Persons
+        ADD CONSTRAINT UC_Person UNIQUE (ID,LastName);
+    </p>
+
+    <h3>DROP a UNIQUE Constraint</h3>
+    <p>
+        To drop a UNIQUE constraint, use the following SQL:
+        MySQL:
+
+        ALTER TABLE Persons
+        DROP INDEX UC_Person;
+    </p>
+
+    <p>
+        SQL Server / Oracle / MS Access:
+        ALTER TABLE Persons
+        DROP CONSTRAINT UC_Person;
+    </p>
+
+
+    <h1>SQL PRIMARY KEY Constraint</h1>
+
+
+    
+
 
 
 
