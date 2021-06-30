@@ -2119,6 +2119,96 @@
 
     <h1>SQL PRIMARY KEY Constraint</h1>
 
+    <p>
+        The PRIMARY KEY constraint uniquely identifies each record in a table.
+        Primary keys must contain UNIQUE values, and cannot contain NULL values.
+
+
+        A table can have only ONE primary key; and in the table, this primary key can consist of single or multiple columns (fields).
+
+    </p>
+
+    <p>
+        The following SQL creates a PRIMARY KEY on the "ID" column when the "Persons" table is created:
+
+        MySQL:
+
+        CREATE TABLE Persons (
+            ID int NOT NULL,
+            LastName varchar(255) NOT NULL,
+            FirstName varchar(255),
+            Age int,
+            PRIMARY KEY (ID)
+        );
+
+        SQL Server / Oracle / MS Access:
+
+        CREATE TABLE Persons (
+            ID int NOT NULL PRIMARY KEY,
+            LastName varchar(255) NOT NULL,
+            FirstName varchar(255),
+            Age int
+        );
+
+        To allow naming of a PRIMARY KEY constraint, and for defining a PRIMARY KEY constraint on multiple columns, use the following SQL syntax:
+
+        MySQL / SQL Server / Oracle / MS Access:
+
+        CREATE TABLE Persons (
+            ID int NOT NULL,
+            LastName varchar(255) NOT NULL,
+            FirstName varchar(255),
+            Age int,
+            CONSTRAINT PK_Person PRIMARY KEY (ID,LastName)
+        );
+    </p>
+
+    <p>
+        <strong>
+            Note: In the example above there is only ONE PRIMARY KEY (PK_Person). However, the VALUE of the primary key is made up of TWO COLUMNS (ID + LastName).
+        </strong>
+    </p>
+
+    <h3>SQL PRIMARY KEY on ALTER TABLE</h3>
+    <p>
+        MySQL / SQL Server / Oracle / MS Access:
+
+        ALTER TABLE Persons
+        ADD PRIMARY KEY (ID);
+
+        To allow naming of a PRIMARY KEY constraint, and for defining a PRIMARY KEY constraint on multiple columns, use the following SQL syntax:
+    </p>
+
+    <p>
+        MySQL / SQL Server / Oracle / MS Access:
+
+        ALTER TABLE Persons
+        ADD CONSTRAINT PK_Person PRIMARY KEY (ID,LastName);
+    </p>
+
+    <p>
+        <strong>
+            Note: If you use ALTER TABLE to add a primary key, the primary key column(s) must have been declared to not contain NULL values (when the table was first created).
+        </strong>
+    </p>
+
+    <h3>DROP a PRIMARY KEY Constraint</h3>
+
+    <p>
+        To drop a PRIMARY KEY constraint, use the following SQL:
+        MySQL:
+
+        ALTER TABLE Persons
+        DROP PRIMARY KEY;
+
+        SQL Server / Oracle / MS Access:
+        ALTER TABLE Persons
+        DROP CONSTRAINT PK_Person;
+    </p>
+
+    <h1>SQL FOREIGN KEY Constraint</h1>
+
+
 
     
 
