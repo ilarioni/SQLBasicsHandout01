@@ -2443,6 +2443,202 @@
 
     <h1>SQL CREATE INDEX Statement</h1>
 
+    <p>
+        The CREATE INDEX statement is used to create indexes in tables.
+        Indexes are used to retrieve data from the database more quickly than otherwise. The users cannot see the indexes, they are just used to speed up searches/queries.
+    </p>
+
+    <p>
+        <strong>
+            Note: Updating a table with indexes takes more time than updating a table without (because the indexes also need an update). So, only create indexes on columns that will be frequently searched against.
+        </strong>
+    </p>
+
+    <h3>CREATE INDEX Syntax</h3>
+
+    <p>
+        create index - Creates an index on a table. Duplicate values are allowed:
+
+        CREATE INDEX index_name
+        ON table_name (column1, column2, ...);
+    </p>
+
+    <h3>CREATE UNIQUE INDEX Syntax</h3>
+    <p>
+        Creates a unique index on a table. Duplicate values are not allowed:
+
+        CREATE UNIQUE INDEX index_name
+        ON table_name (column1, column2, ...);
+    </p>
+
+    <strong>Note: The syntax for creating indexes varies among different databases. Therefore: Check the syntax for creating indexes in your database.</strong>
+
+    <h3>CREATE INDEX Example</h3>
+
+    <p>
+        The SQL statement below creates an index named "idx_lastname" on the "LastName" column in the "Persons" table:
+
+        CREATE INDEX idx_lastname
+        ON Persons (LastName);
+
+        If you want to create an index on a combination of columns, you can list the column names within the parentheses, separated by commas:
+
+        CREATE INDEX idx_pname
+        ON Persons (LastName, FirstName);
+    </p>
+
+    <h3>DROP INDEX Statement</h3>
+    <p>
+        The DROP INDEX statement is used to delete an index in a table.
+
+        MS Access:
+        DROP INDEX index_name ON table_name;
+
+        SQL Server:
+        DROP INDEX table_name.index_name;
+
+        DB2/Oracle:
+        DROP INDEX index_name;
+
+        MySQL:
+        ALTER TABLE table_name
+        DROP INDEX index_name;
+    </p>
+
+    <h1>SQL AUTO INCREMENT Field</h1>
+
+    <p>
+        Auto-increment allows a unique number to be generated automatically when a new record is inserted into a table.
+
+        Often this is the primary key field that we would like to be created automatically every time a new record is inserted.
+    </p>
+
+    <h3>Syntax for MySQL</h3>
+
+    <p>
+        The following SQL statement defines the "Personid" column to be an auto-increment primary key field in the "Persons" table:
+
+        CREATE TABLE Persons (
+            Personid int NOT NULL AUTO_INCREMENT,
+            LastName varchar(255) NOT NULL,
+            FirstName varchar(255),
+            Age int,
+            PRIMARY KEY (Personid)
+        );
+
+        MySQL uses the AUTO_INCREMENT keyword to perform an auto-increment feature.
+        By default, the starting value for AUTO_INCREMENT is 1, and it will increment by 1 for each new record.
+        To let the AUTO_INCREMENT sequence start with another value, use the following SQL statement:
+
+        ALTER TABLE Persons AUTO_INCREMENT=100;
+
+        To insert a new record into the "Persons" table, we will NOT have to specify a value for the "Personid" column (a unique value will be added automatically):
+
+    </p>
+
+    <ul>
+        <li>INSERT INTO Persons (FirstName,LastName)</li>
+        <li>VALUES ('Lars','Monsen');</li>
+    </ul>
+
+    <p>
+        The SQL statement above would insert a new record into the "Persons" table. The "Personid" column would be assigned a unique value. The "FirstName" column would be set to "Lars" and the "LastName" column would be set to "Monsen".
+    </p>
+
+    <h3>Syntax for SQL Server</h3>
+
+    <p>
+        The following SQL statement defines the "Personid" column to be an auto-increment primary key field in the "Persons" table:
+
+        CREATE TABLE Persons (
+            Personid int IDENTITY(1,1) PRIMARY KEY,
+            LastName varchar(255) NOT NULL,
+            FirstName varchar(255),
+            Age int
+        );
+
+        The MS SQL Server uses the IDENTITY keyword to perform an auto-increment feature.
+        In the example above, the starting value for IDENTITY is 1, and it will increment by 1 for each new record.
+        Tip: To specify that the "Personid" column should start at value 10 and increment by 5, change it to IDENTITY(10,5).
+
+    </p>
+
+    <p>
+        To insert a new record into the "Persons" table, we will NOT have to specify a value for the "Personid" column (a unique value will be added automatically):
+
+        <ul>
+            <li>INSERT INTO Persons (FirstName,LastName)</li>
+            <li>VALUES ('Lars','Monsen');</li>
+        </ul>
+    </p>
+
+    <p>
+        The SQL statement above would insert a new record into the "Persons" table. The "Personid" column would be assigned a unique value. The "FirstName" column would be set to "Lars" and the "LastName" column would be set to "Monsen".
+    </p>
+
+    <h3>Syntax for Access</h3>
+    <p>
+        The following SQL statement defines the "Personid" column to be an auto-increment primary key field in the "Persons" table:
+    </p>
+
+    <p>
+        CREATE TABLE Persons (
+            Personid AUTOINCREMENT PRIMARY KEY,
+            LastName varchar(255) NOT NULL,
+            FirstName varchar(255),
+            Age int
+        );
+
+        The MS Access uses the AUTOINCREMENT keyword to perform an auto-increment feature.
+        By default, the starting value for AUTOINCREMENT is 1, and it will increment by 1 for each new record.
+        Tip: To specify that the "Personid" column should start at value 10 and increment by 5, change the autoincrement to AUTOINCREMENT(10,5).
+
+        To insert a new record into the "Persons" table, we will NOT have to specify a value for the "Personid" column (a unique value will be added automatically):
+
+        <ul>
+            <li>INSERT INTO Persons (FirstName,LastName)</li>
+            <li>VALUES ('Lars','Monsen');</li>
+        </ul>
+    </p>
+
+    <p>
+        The SQL statement above would insert a new record into the "Persons" table. The "Personid" column would be assigned a unique value. The "FirstName" column would be set to "Lars" and the "LastName" column would be set to "Monsen".
+    </p>
+
+    <h3>Syntax for Oracle</h3>
+
+    <p>
+        In Oracle the code is a little bit more tricky.
+        You will have to create an auto-increment field with the sequence object (this object generates a number sequence).
+
+        Use the following CREATE SEQUENCE syntax:
+        <ul>
+            <li>CREATE SEQUENCE seq_person</li>
+            <li>MINVALUE 1</li>
+            <li>START WITH 1</li>
+            <li>INCREMENT BY 1</li>
+            <li>CACHE 10;</li>
+        </ul>
+    </p>
+
+    <p>
+        The code above creates a sequence object called seq_person, that starts with 1 and will increment by 1. It will also cache up to 10 values for performance. The cache option specifies how many sequence values will be stored in memory for faster access.
+
+
+        To insert a new record into the "Persons" table, we will have to use the nextval function (this function retrieves the next value from seq_person sequence):
+
+        <ul>
+            <li>INSERT INTO Persons (Personid,FirstName,LastName)</li>
+            <li>VALUES (seq_person.nextval,'Lars','Monsen');</li>
+        </ul>
+
+        The SQL statement above would insert a new record into the "Persons" table. The "Personid" column would be assigned the next number from the seq_person sequence. The "FirstName" column would be set to "Lars" and the "LastName" column would be set to "Monsen".
+
+    </p>
+
+
+    <h1>SQL Dates</h1>
+
 
 
 
