@@ -2639,6 +2639,50 @@
 
     <h1>SQL Dates</h1>
 
+    <p>
+        The most difficult part when working with dates is to be sure that the format of the date you are trying to insert, matches the format of the date column in the database.
+
+        As long as your data contains only the date portion, your queries will work as expected. However, if a time portion is involved, it gets more complicated.
+    </p>
+
+    <h3>
+        SQL Date Data Types
+    </h3>
+
+    <p>
+        MySQL comes with the following data types for storing a date or a date/time value in the database:
+        <ul>
+            <li>DATE - format YYYY-MM-DD</li>
+            <li>DATETIME - format: YYYY-MM-DD HH:MI:SS</li>
+            <li>TIMESTAMP - format: YYYY-MM-DD HH:MI:SS</li>
+            <li>YEAR - format YYYY or YY</li>
+        </ul>
+    </p>
+
+    <p>
+        SQL Server comes with the following data types for storing a date or a date/time value in the database:
+        <ul>
+            <li>DATE - format YYYY-MM-DD</li>
+            <li>DATETIME - format: YYYY-MM-DD HH:MI:SS</li>
+            <li>SMALLDATETIME - format: YYYY-MM-DD HH:MI:SS</li>
+            <li>TIMESTAMP - format: a unique number</li>
+        </ul>
+
+        Note: The date types are chosen for a column when you create a new table in your database!
+    </p>
+
+    <h3>SQL Working with Dates</h3>
+
+    <p>
+        SELECT * FROM Orders WHERE OrderDate='2008-11-11'
+
+        Tip: To keep your queries simple and easy to maintain, do not use time-components in your dates, unless you have to!
+    </p>
+
+    <h1>SQL Views</h1>
+
+
+
 
 
 
